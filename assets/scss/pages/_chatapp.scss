@@ -1,0 +1,210 @@
+.chat_list {
+    .user_list{
+        > li{
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid $gray-100; 
+        }
+        .name {
+            display: flex;
+            justify-content: space-between;
+            a{
+                font-size: $font-size + 2px;
+            }
+
+            small{
+                font-size: $font-size - 2px;
+                color: $gray-400;
+            }
+        }
+
+        img {
+            @include border-radius(35px);
+            width: 35px;
+        }
+        .about {
+            padding-left: 10px;
+            width: 100%;
+        }
+    }
+}
+.chat_window {
+
+    .chat-header {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            @include border-radius(40px);
+            float: left;
+            width: 40px;
+            height: 40px;
+        }
+        .chat-about {
+            float: left;
+            padding-left: 10px;
+        }
+        .chat-with {
+            font-weight: $font-weight-xbold;
+            font-size: $font-size + 2px;
+        }
+        .chat-num-messages {
+            color: $gray-800;
+        }
+        @include max-screen($break-xsmall) {
+            .list_btn.btn{
+                display: none;
+            }
+        }
+    }
+    .chat-history {
+        padding: 20px;
+        border-bottom: 2px solid $white;
+        overflow-y: auto;
+        max-height: 510px;
+        
+        @media only screen and (max-width: $break-1024){
+            height: calc(100vh - 340px);
+        }
+        @media only screen and (max-width: $break-medium){
+            height: calc(100vh - 320px);
+        }
+        @media only screen and (max-width: $break-small - 1px){
+            height: calc(100vh - 280px);
+        }
+        
+        li {
+            list-style: none;
+        }
+        .message-data {
+            margin-bottom: 5px;
+        }
+        .message {
+            @include border-radius(7px);
+            color: $gray-800;
+            font-size: $font-size + 1px;
+            padding: 18px 20px;
+            line-height: 26px;
+            margin-bottom: 30px;
+            width: 90%;
+            position: relative;
+            .time {
+                font-size: $font-size - 2px;
+                padding: 0 5px;
+                display: block;
+            }
+            .attachment{
+                display: flex;
+                img{
+                    max-width: 150px;
+                    margin: 2px;
+                }
+            }
+        }
+        .my-message {
+            background: $gray-100;
+        }
+        .other-message {
+            background: $gray-100;
+            text-align: right;
+
+            &:after {
+                border-bottom-color: $gray-100;
+                left: 93%;
+            }
+        }
+    }
+    .chat-box{
+        border: .0625rem solid #BABDBF;
+        border-radius: .215rem;
+        .btn{
+            padding: 10px;
+        }
+        .form-control{
+            border: 0;
+        }
+    }
+    .list_btn{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        padding: 0;        
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        display: none;
+
+        @media only screen and (max-width: $break-small - 1px){
+            display: block;
+        }
+    }
+}
+
+.status{
+    font-size: $font-size;
+    color: $gray-500;
+    i{
+        font-size: $font-size - 2px;
+    }
+
+    &.online {
+        i{
+            color: $green;
+        }
+    }
+    &.offline {
+        i{
+            color: $orange;
+        }
+    }
+    &.me {
+        i{
+            color: $dark;
+        }
+    }
+    .name {
+        color: $gray-800;
+        font-size: $font-size + 2px;
+        font-weight: $font-weight-xbold;
+    }    
+}
+
+.team-info{
+    @extend .m-t-5;
+
+    li{
+        display: inline-block;
+
+        & + li{
+            margin-left: -10px;
+        }
+
+        &:hover{            
+            z-index: 99;
+            position: relative;
+            img{
+                @include box-shadow(0px 2px 10px 0px rgba($dark, 0.6));
+                //@include transform(scale(1.2));
+            }
+        }
+        img{
+            @include transition(all .5s);
+            @include border-radius(30px);            
+            width: 30px;
+            border: 2px solid $white;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .chat_list{
+        height: 650px;
+        overflow-x: auto;        
+    }
+    .chat-history{
+        height: 600px;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,190 @@
+// Font
+@for $i from 5 through 49 {
+    .font-#{$i + 1} {
+        font-size: #{$i + 1}px;
+    }
+}
+// Margin
+@for $i from -25 through 25 {
+    .m-l-#{$i * 5} {
+        margin-left: #{$i * 5}px;
+    }
+
+    .m-t-#{$i * 5} {
+        margin-top: #{$i * 5}px;
+    }
+
+    .m-r-#{$i * 5} {
+        margin-right: #{$i * 5}px;
+    }
+
+    .m-b-#{$i * 5} {
+        margin-bottom: #{$i * 5}px;
+    }
+}
+.m0 {
+    margin: 0 !important;
+}
+// Padding
+@for $i from 0 through 25 {
+    .pl-#{$i * 5} {
+        padding-left: #{$i * 5}px;
+    }
+
+    .pt-#{$i * 5} {
+        padding-top: #{$i * 5}px;
+    }
+
+    .pr-#{$i * 5} {
+        padding-right: #{$i * 5}px;
+    }
+
+    .pb-#{$i * 5} {
+        padding-bottom: #{$i * 5}px;
+    }
+}
+.p0 {
+    padding: 0 !important;
+}
+
+@mixin inline-block() {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+}
+@mixin display-block() {
+	display: block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: block;
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin border-right-radius($right-radius) {
+	-moz-border-radius-topright: $right-radius;
+	-webkit-border-top-right-radius: $right-radius;
+	border-top-right-radius: $right-radius;
+	-moz-border-radius-bottomright: $right-radius;
+	-webkit-border-bottom-right-radius: $right-radius;
+	border-bottom-right-radius: $right-radius;
+}
+@mixin border-left-radius($left-radius) {
+	-moz-border-radius-topleft: $left-radius;
+	-webkit-border-top-left-radius: $left-radius;
+	border-top-left-radius: $left-radius;
+	-moz-border-radius-bottomleft: $left-radius;
+	-webkit-border-bottom-left-radius: $left-radius;
+	border-bottom-left-radius: $left-radius;
+}
+@mixin border-top-radius($top-radius) {
+	-moz-border-radius-topleft: $top-radius;
+	-webkit-border-top-left-radius: $top-radius;
+	border-top-left-radius: $top-radius;
+	-moz-border-radius-topright: $top-radius;
+	-webkit-border-top-right-radius: $top-radius;
+	border-top-right-radius: $top-radius;
+}
+@mixin border-bottom-radius($bottom-radius) {
+	-moz-border-radius-bottomleft: $bottom-radius;
+	-webkit-border-bottom-left-radius: $bottom-radius;
+	border-bottom-left-radius: $bottom-radius;
+	-moz-border-radius-bottomright: $bottom-radius;
+	-webkit-border-bottom-right-radius: $bottom-radius;
+	border-bottom-right-radius: $bottom-radius;
+}
+
+// Box Shadow
+@mixin box-shadow($box-shadow) {
+	-moz-box-shadow: $box-shadow;
+	-webkit-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin alert-variant($background, $border, $color) {
+	color: color-yiq($background);
+	@include gradient-bg($background);
+	border-color: $border;
+  
+	hr {
+	    border-top-color: darken($border, 5%);
+	}
+  
+	.alert-link {
+	    color: darken($color, 10%);
+	}
+}
+
+// Contextual backgrounds
+@mixin bg-variant($parent, $color) {
+	#{$parent} {
+	    background-color: $color !important;
+	}
+	a#{$parent},
+	button#{$parent} {
+	    @include hover-focus {
+	    background-color: darken($color, 10%) !important;
+	    }
+	}
+}
+@mixin bg-gradient-variant($parent, $color) {
+	#{$parent} {
+	    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+	}
+}
+
+// Popover variant
+@mixin popover-variant($background) {
+
+	background-color: $background;
+
+	.popover-header,
+	.popover-body {
+		background-color: $background;
+		color: color-yiq($background);
+	}
+	.popover-header{
+		border-color: rgba(color-yiq($background), .2);
+	}
+	&.bs-popover-top {
+		.arrow::after {
+			border-top-color: $background;
+		}
+	}
+	&.bs-popover-right {
+		.arrow::after {
+			border-right-color: $background;
+		}
+	}
+	&.bs-popover-bottom {
+		.arrow::after {
+			border-bottom-color: $background;
+		}
+	}
+	&.bs-popover-left {
+		.arrow::after {
+			border-left-color: $background;
+		}
+	}
+}

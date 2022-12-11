@@ -1,0 +1,119 @@
+.auth-main{
+    height: 100vh;
+    &:after{
+        content: '';
+        position: absolute;
+        right:0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+		background: url("../../assets/images/backgrounds/img-4.jpg") no-repeat top left fixed;
+		background-size: cover;
+    }
+    .card{
+		padding:10px;
+		box-shadow: 0 0px 15px 1px rgba(0,0,0,0.05);
+    }
+}
+
+
+.auth-box {
+	width: 320px;
+	height: auto;	    
+    margin-left: auto;
+    margin-right: auto;
+
+	.top{
+		font-size: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+        img{
+			width: 1.7rem;
+			margin-right: 5px;
+		}
+		strong,
+		span{
+			display: inline-block;
+		}
+	}
+	
+	.card {
+		.header{
+			.title {
+				span{
+					display: block;
+					&:first-child{
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
+
+	.form-auth-small {
+		.btn{
+            margin-top: 20px;
+		}
+
+		.element-left {
+			float: left;
+		}
+
+		.element-right {
+			float: right;
+		}
+
+		.bottom {
+            margin-top: 20px;
+			text-align: center;
+		}
+    }
+    
+    .lead {
+        margin-top: 5px;
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+
+	.helper-text {
+        color: $text-muted;
+        display: block;
+	}
+
+	.btn-signin-social {
+        display: block;
+        margin-bottom: 5px;
+		padding: 10px 22px;
+		width: 100%;
+		background-color: $white;
+		border-color: $gray-200;
+
+		&:hover,
+		&:focus {
+			background-color: $gray-200;
+		}
+
+		i {
+			font-size: 16px;
+			margin: 5px;
+		}
+	}
+
+	@include max-screen($break-1280 - 1px) {
+		
+	}
+
+	@include max-screen($break-medium) {
+        width: 80%;
+        margin: 0 auto;
+	}
+
+	@include max-screen($break-xsmall) {
+        width: 90%;
+	}
+}
+
+
+
+

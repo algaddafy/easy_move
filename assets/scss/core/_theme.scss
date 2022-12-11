@@ -1,0 +1,187 @@
+.dark-sidebar{
+	.left_sidebar{
+		@include transition(all .3s ease-in-out);
+		background: $dark;		
+		.user-info{
+			border-color: $gray-700;
+			h5{
+				color: $white;
+			}
+			small{
+				color: $gray-600;	
+			}
+		}
+		.metismenu a{
+			color: $gray-500;
+		}
+	}
+}
+
+.theme-black{ 
+	.custom-navbar{
+		background: $black;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($gray-400, 1);
+				color: $black;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($black, 0.2);
+				color: $black;
+			}
+		}
+	}
+}
+.theme-azure{
+	.custom-navbar{
+		background: $azure;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($azure, 0.2);
+				color: $azure;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($azure, 0.2);
+				color: $azure;
+			}
+		}
+	}
+}
+.theme-indigo{
+	.custom-navbar{
+		background: $indigo;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($indigo, 0.2);
+				color: $indigo;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($indigo, 0.2);
+				color: $indigo;
+			}
+		}
+	}
+}
+.theme-purple{
+	.custom-navbar{
+		background: $purple;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($purple, 0.2);
+				color: $purple;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($purple, 0.2);
+				color: $purple;
+			}
+		}
+	}
+}
+.theme-orange{
+	.custom-navbar{
+		background: $orange;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($orange, 0.2);
+				color: $orange;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($orange, 0.2);
+				color: $orange;
+			}
+		}
+	}
+}
+.theme-green{
+	.custom-navbar{
+		background: $green;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($green, 0.2);
+				color: $green;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($green, 0.2);
+				color: $green;
+			}
+		}
+	}
+}
+.theme-cyan{
+	.custom-navbar{
+		background: $cyan;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($cyan, 0.2);
+				color: $cyan;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($cyan, 0.2);
+				color: $cyan;
+			}
+		}
+	}
+}
+.theme-blush{
+	.custom-navbar{
+		background: $blush;
+	}
+	.metismenu{
+		> li.active{
+			a{
+				background: rgba($blush, 0.2);
+				color: $blush;
+			}
+		}
+		a{
+			&:hover,
+			&:active,
+			&:focus{
+				background: rgba($blush, 0.2);
+				color: $blush;
+			}
+		}
+	}
+}

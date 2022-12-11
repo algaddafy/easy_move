@@ -1,0 +1,273 @@
+body{
+    &.rtl{
+        direction: rtl;
+        text-align: right;
+
+        // Input Group
+        .input-group {
+            >.form-control {
+                &:not(:first-child) {
+                    border-radius: 0;
+                }
+                &:not(:last-child) {
+                    border-radius: 0;
+                }
+            }
+            >.custom-select {
+                &:not(:first-child) {
+                    border-radius: 0;
+                }
+                &:not(:last-child) {
+                    border-radius: 0;
+                }
+            }
+            >.input-group-prepend {
+                >.btn {
+                    border-radius: 0;
+                }
+                >.input-group-text {
+                    border-radius: 0;
+                }
+                &:not(:first-child) {
+                    >.btn {
+                        border-radius: 0;
+                    }
+                    >.input-group-text {
+                        border-radius: 0;
+                    }
+                }
+                &:first-child {
+                    >.btn {
+                        &:not(:first-child) {
+                            border-radius: 0;
+                        }
+                    }
+                    >.input-group-text {
+                        &:not(:first-child) {
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+            >.input-group-append {
+                &:not(:last-child) {
+                    >.btn {
+                        border-radius: 0;
+                    }
+                    >.input-group-text {
+                        border-radius: 0;
+                    }
+                }
+                &:last-child {
+                    >.btn {
+                        &:not(:last-child) {
+                            &:not(.dropdown-toggle) {
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                    >.input-group-text {
+                        &:not(:last-child) {
+                            border-radius: 0;
+                        }
+                    }
+                }
+                >.btn {
+                    border-radius: 0;
+                }
+                >.input-group-text {
+                    border-radius: 0;
+                }
+            }
+        }
+
+        // CheckBox & Radio
+        .custom-control{
+            padding-left: 0;
+            padding-right: 1.75rem;
+
+            .custom-control-label{
+                &::before,
+                &::after{
+                    right: -1.75rem;
+                    left: auto;
+                }
+            }
+        }
+        .list-unstyled {
+            padding-right: 0;
+        }
+
+        // Navbar Top
+        .navbar-brand{
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+
+        #navbar_main{
+            .navbar-nav{
+                padding-right: 0;
+                .list-group {
+                    .list-group-item{
+                        .list-group-img{
+                            margin-right: 0;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .nav-item {
+                    .dropdown-menu {
+                        text-align: right;
+                        .dropdown-item {
+                            >i {
+                                margin-left: 1rem;
+                                margin-right: 0;
+                            }
+                            >svg {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Breadcrumb
+        .breadcrumb-item+.breadcrumb-item {
+            &::before {
+                padding-left: .5rem;
+                padding-right: .5rem;
+            }
+        }
+
+        .main_content {
+            // Left SideBar
+            .left_sidebar{
+                left: auto;
+                right: 0;
+                .metismenu{
+                    .has-arrow{
+                        &:after{
+                            right: auto;
+                            left: 1em;
+                        }
+                    }
+                }
+            }
+    
+            // Right Sidebar
+            .right_sidebar{
+                right: auto;
+                left: -250px;
+            }
+
+            // Page
+            .page{
+                left: auto;
+                right: 250px;
+            }
+
+            .avatar+.avatar-content{
+                margin-right: .75rem;
+            }
+
+            .inbox-page {
+                .mail-side {
+                    .nav {
+                        padding-right: 0;
+                        li {
+                            a {
+                                .badge {
+                                    margin-right: auto;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .mail-list {
+                    ul {
+                        .about {
+                            padding-left: 0;
+                            padding-right: 20px;
+                        }
+                    }
+                }
+            }
+            .chat_list {
+                .user_list {
+                    .about {
+                        padding-left: 0;
+                        padding-right: 20px;
+                    }
+                }
+            }
+
+            .small_mcard_1 {
+                .user {
+                    img {
+                        margin-left: 15px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+        }
+
+        .footable-details.table,
+        .footable.table{
+            th {
+                text-align: right;
+                padding-left: 30px;
+                padding-right: .75rem;
+            }
+        }
+
+        .timeline-item{
+            border-left: 0c;
+            border-right: 1px solid #dee2e6;
+            &::before{
+                right: 2em;
+                left: auto;
+            }
+            &::after{
+                right: -8px;
+                left: auto;
+            }
+        }
+
+        .invoice1 {
+            .logo,
+            .clientlogo{
+                float: right;
+            }
+            .invoice-top {
+                .title {
+                    float: left;
+                }
+            }
+            .info{
+                float: right;
+                margin-left: 0;
+                margin-right: 20px;
+            }
+        }
+
+        .auth-box {
+            .form-auth-small {
+                .element-left {
+                    float: right;
+                }
+            }
+        }
+
+        .nav-tabs-new {
+            padding-right: 0;
+        }
+
+        .icon+.icon-text{
+            padding-left: 0;
+            padding-right: 1rem;
+        }
+    }
+}

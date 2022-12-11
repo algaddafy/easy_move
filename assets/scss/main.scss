@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
+
+// Theme variables
+@import "variables";
+@import "reboot";
+@import "global";
+
+// Bootstrap variables and functions 
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";  
+
+
+// Bootstrap components
+@import "bootstrap/bootstrap";
+
+@import "utilities/main-utilities";
+
+// Theme styles
+@import "components/main-components";
+
+// Core scss
+@import "core/general";
+@import "core/sidebar";
+@import "core/rightbar";
+@import "core/megamenu";
+@import "core/theme";
+
+// User's custom styles
+@import "custom";
+
+// Pages
+@import "pages/calendar";
+@import "pages/chatapp";
+@import "pages/inbox";
+@import "pages/widgets";
+@import "pages/timeline";
+@import "pages/invoice";
+@import "pages/authentication";
+@import "pages/pricing";

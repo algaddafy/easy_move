@@ -1,0 +1,60 @@
+﻿.timeline-item {
+	padding: 3em 2em 2em;
+	position: relative;
+	border-left: 1px solid $gray-300;
+		
+	&:before {
+		content: attr(date-is);
+		position: absolute;
+		left: 2em;		
+		top: 1em;
+		@extend .displayblock;		
+		color: $gray-600;
+	}
+
+	&:after {
+		width: 15px;
+		height: 15px;
+		@extend .displayblock;
+		top: 1em;
+		position: absolute;
+		left: -8px;
+		border-radius: 10px;
+		content: '';		
+        background: $white;
+        border: 3px solid;
+	}
+
+    &.green{
+        &:after{
+            border-color: $green;
+        }
+    }
+    &.blue{
+        &:after{
+            border-color: $blue;
+        }
+    }
+    &.warning{
+        &:after{
+            border-color: $orange;
+        }
+	}
+	&.red{
+        &:after{
+            border-color: $red;
+        }
+	}
+	&.dark{
+        &:after{
+            border-color: $dark;
+        }
+    }
+    
+    h5{
+        @extend .margin-0;
+    }
+    .msg{
+        margin: 15px 0;
+    }
+}

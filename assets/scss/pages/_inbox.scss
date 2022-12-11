@@ -1,0 +1,148 @@
+.inbox-page{
+    padding: 0 !important;
+    .left{
+        display: flex;
+        height: 100vh;
+        position: relative;        
+    }
+    .right{
+        display: flex;
+        background: $white;
+        height: 100vh;
+        overflow-y: auto;
+        @include max-screen ($break-1024 - 1px){
+            display: none;
+        }
+    }
+
+    .mail-side{
+        background: $dark;
+        width: 190px;
+        padding: 20px;
+        border-left: 2px solid $white;
+
+        .label{
+            margin-top: 20px;
+            font-size: $font-size - 2px;
+            color: rgba($white, 0.5);
+        }
+        .nav {
+            flex-direction: column;
+            li{
+                line-height: 35px;
+
+                a{
+                    color: $gray-200;
+                    display: flex;
+                    align-items: center;
+
+                    .badge {
+                        margin-left: auto;
+                        margin-right: 0;
+                    }
+                    i{
+                        width: 25px;
+                    }
+                }
+            }
+        }
+        &.div-toggle{
+            left: -250px;
+            position: absolute;
+        }
+        @include max-screen ($break-1280){
+            left: -250px;
+            position: absolute;
+            height: 100vh;            
+
+            &.div-toggle{
+                left: 0;  
+                z-index: 999;              
+            }
+        }
+    }
+    .mail-list{
+        background: $white;
+        padding: 20px;        
+        width: 400px;
+        @include max-screen ($break-1024 - 1px){
+            width: 100%;
+        }
+
+        .list-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        ul{
+            height: calc(100vh - 90px);
+            margin: 0;
+            overflow-y: auto;
+            margin-right: -15px;
+            padding-right: 15px;
+
+            > li{
+                display: flex;
+                padding: 15px;                
+                background: $gray-100;
+                margin: 5px 0;
+
+                &.active{
+                    background: $gray-100;
+                }
+            }
+            .about {
+                padding-left: 20px;
+                width: 100%;
+    
+                small{
+                    font-size: $font-size - 2px;
+                    color: $gray-500;
+                }
+            }
+        }        
+    }
+    .mail-detail{
+        margin-bottom: 0;
+    }
+    .mail-activites{
+        margin-bottom: 0;
+        @include max-screen ($break-xlarge){
+            display: none;
+        }
+    }
+}
+
+.file_folder{
+
+    a{
+        border-radius: $border-radius-sm;
+        border: 1px solid $gray-200;
+        display: inline-block;        
+        position: relative;
+        overflow: hidden;
+        width: 220px;
+
+        @media only screen and (max-width: $break-small - 218px){
+            width: 100%;
+        }
+    }
+    .icon {
+        @extend .m-r-10;
+        text-align: center;
+        float: left;
+        width: 60px;
+
+        i {
+            font-size: $font-size + 17px;
+            vertical-align: middle;
+            line-height: 65px;
+        }
+    }
+
+    .file-name {
+        padding: 10px;        
+        .date {
+            float: right;
+        }
+    }
+}

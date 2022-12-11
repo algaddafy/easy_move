@@ -1,0 +1,19 @@
+// Backdrop
+.body-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1040; // navbar fixed has a z-index of 1030
+}
+
+.inlineblock {display: inline-block;}
+.displayblock {display: block;}
+.displaynone {display: none; }
+.overflowhidden{overflow: hidden;}
+.z-index{ z-index: 9999;}
+.br8{border-radius:8px; }
+.p-10{padding: 10px !important; }
+.margin-0 {margin: 0 !important;}
