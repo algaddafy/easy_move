@@ -16,59 +16,21 @@ include('includes/dbconnection.php');
 
 
     <!-- ============== All CSS ================ -->
-    <!-- normalize css
-        ============================================ -->
     <link rel="stylesheet" href="css1/normalize.css">
-
-    <!-- animate css
-        ============================================ -->
     <link rel="stylesheet" href="css1/animate.css">
-
-    <!-- bootstrap css
-        ============================================ -->
     <link rel="stylesheet" href="css1/bootstrap.min.css">
-
-    <!-- meanmenu css
-        ============================================ -->
     <link rel="stylesheet" href="css1/meanmenu.min.css">
-
-    <!-- font-awesome css
-        ============================================ -->
     <link rel="stylesheet" href="css1/font-awesome.min.css">
-
-    <!-- icofont css
-        ============================================ -->
     <link rel="stylesheet" href="css1/icofont.css">
-
-    <!-- change-text css
-        ============================================ -->
     <link rel="stylesheet" href="css1/change-text.css">
-
-    <!-- YTPlayer css
-        ============================================ -->
     <link rel="stylesheet" href="css1/jquery.mb.YTPlayer.min.css">
-
-    <!-- main css
-        ============================================ -->
     <link rel="stylesheet" href="css1/main.css">
-
-    <!-- owl.carousel css
-        ============================================ -->
     <link rel="stylesheet" href="css1/owl.carousel.css">
     <link rel="stylesheet" href="css1/owl.theme.css">
     <link rel="stylesheet" href="css1/owl.transitions.css">
-
-    <!-- nivo-slider css
-        ============================================ -->
     <link rel="stylesheet" href="lib/css/nivo-slider.css">
     <link rel="stylesheet" href="lib/css/preview.css">
-
-    <!-- style css
-        ============================================ -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- responsive css
-        ============================================ -->
     <link rel="stylesheet" href="css1/responsive.css">
 
     <!-- modernizr js
