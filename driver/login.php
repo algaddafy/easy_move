@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" name="login">LOGIN</button>
                                 <div class="bottom">
                                     <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="forgot-password.php">Forgot password?</a></span>
-                                    <a href="../index.php">Back Home!!</a>
+                                    <a href="../index.php">Back Home!</a>
                                 </div>
                             </form>
                         </div>
