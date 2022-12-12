@@ -134,6 +134,18 @@ include('includes/dbconnection.php');
                                 <td>03:20pm</td>
                                 <td>Notun Bazar to UIU</td>
                             </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>04:30pm</td>
+                                <td>04:50pm</td>
+                                <td>UIU to Notun Bazar</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>05:00pm</td>
+                                <td>05:20pm</td>
+                                <td>Notun Bazar to UIU</td>
+                            </tr>
                         </tbody>
                     </table>
 
