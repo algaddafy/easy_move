@@ -30,14 +30,14 @@
 
                 </ul>
             </li>
-            <li>
+<!--             <li>
                 <a href="" class="has-arrow"><i class="ti-pencil-alt"></i><span>Page</span></a>
                 <ul>
                     <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="contactus.php">Contact Us</a></li>
 
                 </ul>
-            </li>
+            </li> -->
             <li>
                 <a href="javascript:void(0)" class="has-arrow"><i class="ti-pencil-alt"></i><span>Request</span></a>
                 <ul>
