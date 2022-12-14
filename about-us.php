@@ -16,20 +16,9 @@ include('includes/dbconnection.php');
 
 
     <!-- ============== All CSS ================ -->
-    <!-- normalize css
-        ============================================ -->
     <link rel="stylesheet" href="css1/normalize.css">
-
-    <!-- animate css
-        ============================================ -->
     <link rel="stylesheet" href="css1/animate.css">
-
-    <!-- bootstrap css
-        ============================================ -->
     <link rel="stylesheet" href="css1/bootstrap.min.css">
-
-    <!-- meanmenu css
-        ============================================ -->
     <link rel="stylesheet" href="css1/meanmenu.min.css">
 
     <!-- font-awesome css
