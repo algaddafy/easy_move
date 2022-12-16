@@ -10,6 +10,8 @@ if (isset($_POST['submit'])) {
     $uiuid = $_POST['uiuid'];
     $mobnum = $_POST['mobnum'];
     $email = $_POST['email'];
+    $select_day = $_POST['select_day'];
+    $select_time = $_POST['select_time'];
     $address = $_POST['address'];
 
     $password = md5($_POST['password']);
@@ -23,13 +25,15 @@ if (isset($_POST['submit'])) {
     $results = $query->fetchAll(PDO::FETCH_OBJ);
     if ($query->rowCount() == 0) {
 
-        $sql = "insert into tbldriver(DriverID,Name,Uiuid,MobileNumber,Email,Address,Password)values(:driid,:name,:uiuid,:mobnum,:email,:address,:password)";
+        $sql = "insert into tbldriver(DriverID,Name,Uiuid,MobileNumber,Email,Select_Day,Select_Time,Address,Password)values(:driid,:name,:uiuid,:mobnum,:email,:select_day,:select_time,:address,:password)";
         $query = $dbh->prepare($sql);
         $query->bindParam(':driid', $driid, PDO::PARAM_STR);
         $query->bindParam(':name', $name, PDO::PARAM_STR);
-        $query->bindParam(':uiuid', $name, PDO::PARAM_STR);
+        $query->bindParam(':uiuid', $uiuid, PDO::PARAM_STR);
         $query->bindParam(':mobnum', $mobnum, PDO::PARAM_STR);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
+        $query->bindParam(':select_day', $select_day, PDO::PARAM_STR);
+        $query->bindParam(':select_time', $select_time, PDO::PARAM_STR);
         $query->bindParam(':address', $address, PDO::PARAM_STR);
         $query->bindParam(':password', $password, PDO::PARAM_STR);
         $query->execute();
@@ -183,9 +187,36 @@ if (isset($_POST['submit'])) {
                                     <label>Email</label>
                                     <input type="email" class="form-control" name="email" value="" required='true' placeholder="Enter your email number.">
                                 </div>
+                                <label class="form-label" for="select_day">Choose your day:</label>
+
+                                <select class="form-control" name="select_day" id="select_day" style="width: 50%;">
+                                    <option selected disabled>Select your day</option>
+                                    <option value="Sat">Sat</option>
+                                    <option value="Sat & Tue">Sat & Tue</option>
+                                    <option value="Sun">Sun</option>
+                                    <option value="Sun & Wed">Sun & Wed</option>
+                                    <option value="Mon">Mon</option>
+                                    <option value="Tue">Tue</option>
+                                    <option value="Wed">Wed</option>
+                                </select>
+                                <br>
+                                <label class="form-label" for="select_time">Choose your pickup time:</label>
+
+                                <select class="form-control" name="select_time" id="select_time" style="width: 50%;">
+                                    <option selected disabled>Select your time</option>
+                                    <option value="10:15am">10:15am</option>
+                                    <option value="11:15am">11:15am</option>
+                                    <option value="12:00pm">12:00pm</option>
+                                    <option value="01:30pm">01:30pm</option>
+                                    <option value="01:45pm">01:45pm</option>
+                                    <option value="03:15pm">03:15pm</option>
+                                    <option value="03:45pm">03:45pm</option>
+                                    <option value="04:45pm">04:45pm</option>
+                                </select>
+                                <br>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <textarea type="text" class="form-control" id="email2" name="address" value="" required='true' placeholder="Enter your address."></textarea>
+                                    <input type="text" class="form-control" id="email2" name="address" value="" required='true' maxlength="20" placeholder="Enter your address."></input>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

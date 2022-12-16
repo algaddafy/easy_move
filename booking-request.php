@@ -103,6 +103,8 @@ if (isset($_POST['submit'])) {
     <!-- modernizr js
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+
 </head>
 
 <body>
@@ -150,11 +152,31 @@ if (isset($_POST['submit'])) {
                         <div class="client-address-form">
                             <form action="" method="post">
                                 <label class="form-label">Name</label>
-                                <input class=" form-control" type="text" placeholder="Enter your name" name="name" required="true">
+                                <input class="form-control" type="text" placeholder="Enter your name" name="name" required="true">
                                 <label class="form-label">Email</label>
                                 <input class="form-control" type="email" placeholder="Enter your email" name="email" required="true">
                                 <label class="form-label">Phone</label>
                                 <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" required="true" maxlength="11" pattern="[0-9]+">
+                                <!-- <label class="form-label" for="select_box">Choose your driver with timing:</label>
+
+                                <select class="form-control" name="select_box" id="select_box" style="width: 50%;">
+                                    <option selected disabled>Select your driver with timing</option>
+                                    <?php
+                                    $sql = "SELECT * from tbldriver";
+                                    $query = $dbh->prepare($sql);
+                                    $query->execute();
+                                    $results = $query->fetchAll(PDO::FETCH_OBJ);
+
+                                    $cnt = 1;
+                                    if ($query->rowCount() > 0) {
+                                        foreach ($results as $row) { ?>
+                                            <option value=" Day: <?php echo htmlentities($row->Select_Day) . " Time: " . htmlentities($row->Select_Time); ?>">
+                                                Day: <?php echo htmlentities($row->Select_Day) . " Time: " . htmlentities($row->Select_Time); ?></option>
+
+                                    <?php }
+                                    } ?>
+                                </select>
+                                <br> -->
                                 <label class="form-label">Pickup Location</label>
                                 <input class="form-control" type="text" placeholder="Enter Location" name="pickuploc" required="true">
                                 <label class="form-label">Destination</label>
@@ -208,7 +230,7 @@ if (isset($_POST['submit'])) {
     <!-- ============== All JS ================ -->
     <!-- jquery js
         =========================================== -->
-    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-1.12.0.min.js"></script>
 
     <!-- bootstrap js
         =========================================== -->
@@ -255,6 +277,18 @@ if (isset($_POST['submit'])) {
     <!-- main js
         =========================================== -->
     <script src="js/main.js"></script>
+
+    <!-- Deslect -->
+
+    <!-- <script src="js/dselect.js"></script>
+
+    <script>
+        var select_box_element = document.querySelector('#select_box');
+
+        dselect(select_box_element, {
+            search: true
+        });
+    </script> -->
 </body>
 
 </html>
