@@ -1874,7 +1874,6 @@ a.book-now-btn:hover {
     border: 1px solid #eee;
     margin-bottom: 22px;
     padding: 6px 10px;
-    text-transform: capitalize;
     width: 100%;
 }
 .payment-methods {
