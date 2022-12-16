@@ -61,8 +61,8 @@ if (isset($_POST['login'])) {
                         <div class="body">
                             <form class="form-auth-small" action="" method="post">
                                 <div class="form-group">
-                                    <label for="signin-email" class="control-label sr-only">Identity Number</label>
-                                    <input type="text" class="form-control" placeholder="Enter your ID" required="true" name="did" value="">
+                                    <label for="signin-email" class="control-label sr-only">Username</label>
+                                    <input type="text" class="form-control" placeholder="Enter your username" required="true" name="did" value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="signin-password" class="control-label sr-only">Password</label>
@@ -70,7 +70,9 @@ if (isset($_POST['login'])) {
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" name="login">LOGIN</button>
+
                                 <div class="bottom">
+                                    <span class="helper-text m-b-10"> <a href="../driver-registration.php">Sign Up</a></span>
                                     <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="forgot-password.php">Forgot password?</a></span>
                                     <a href="../index.php">Back Home!</a>
                                 </div>
