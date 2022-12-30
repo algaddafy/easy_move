@@ -82,7 +82,7 @@ if (strlen($_SESSION['vamsaid'] == 0)) {
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Page Description:</label>
-                                                    <textarea type="text" name="pagedes" class="form-control" required='true'><?php echo $row->PageDescription; ?></textarea>
+                                                    <input type="text" name="pagedes" value="<?php echo $row->PageDescription; ?>" class="form-control" required='true'>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Email:</label>

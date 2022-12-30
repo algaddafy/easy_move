@@ -112,34 +112,34 @@ include('includes/dbconnection.php');
                         <h2>Rickshawala's <span> Contact Info</span></h2>
                     </div>
                     <!-- section title end -->
-                    <table class="table">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Contact Number</th>
-                                <th scope="col">Address</th>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Mobile Number</th>
+                                <th>Address</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Kuddus</td>
-                                <td>01700000000</td>
-                                <td>Notun Bazar</td>
+                                <?php
+                                $sql = "SELECT * from  rickshawala";
+                                $query = $dbh->prepare($sql);
+                                $query->execute();
+                                $results = $query->fetchAll(PDO::FETCH_OBJ);
+
+                                $cnt = 1;
+                                if ($query->rowCount() > 0) {
+                                    foreach ($results as $row) {               ?>
+                                        <td><?php echo htmlentities($cnt); ?></td>
+                                        <td><?php echo htmlentities($row->Name); ?></td>
+                                        <td><?php echo htmlentities($row->Contact); ?></td>
+                                        <td><?php echo htmlentities($row->address); ?></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Rohim</td>
-                                <td>01600000000</td>
-                                <td>Nodda</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Abbas</td>
-                                <td>01900000000</td>
-                                <td>Sayed Nogor</td>
-                            </tr>
+                    <?php $cnt = $cnt + 1;
+                                    }
+                                } ?>
                         </tbody>
                     </table>
                 </div>

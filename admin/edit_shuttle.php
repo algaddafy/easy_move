@@ -1,25 +1,27 @@
 <?php
 session_start();
-error_reporting(0);
+error_reporting(1);
 include('includes/dbconnection.php');
 if (strlen($_SESSION['vamsaid'] == 0)) {
     header('location:logout.php');
 } else {
     if (isset($_POST['submit'])) {
 
-
-
-
         $vamsaid = $_SESSION['vamsaid'];
-        $pagetitle = $_POST['pagetitle'];
-        $pagedes = $_POST['pagedes'];
-        $sql = "update tblpage set PageTitle=:pagetitle,PageDescription=:pagedes where  PageType='aboutus'";
-        $query = $dbh->prepare($sql);
-        $query->bindParam(':pagetitle', $pagetitle, PDO::PARAM_STR);
-        $query->bindParam(':pagedes', $pagedes, PDO::PARAM_STR);
+        $S_Time = $_POST['S_Time'];
+        $A_Time = $_POST['A_Time'];
+        $Route = $_POST['Route'];
+        $eid = $_GET['editid'];
 
+        $sql = "update shuttle set S_Time=:S_Time,A_Time=:A_Time,Route=:Route where ID=:eid";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':S_Time', $S_Time, PDO::PARAM_STR);
+        $query->bindParam(':A_Time', $A_Time, PDO::PARAM_STR);
+        $query->bindParam(':Route', $Route, PDO::PARAM_STR);
+        $query->bindParam(':eid', $eid, PDO::PARAM_STR);
         $query->execute();
-        echo '<script>alert("About us has been updated")</script>';
+
+        echo '<script>alert("Rickshawals info has been Updated.")</script>';
     }
 
 ?>
@@ -27,7 +29,7 @@ if (strlen($_SESSION['vamsaid'] == 0)) {
     <html lang="en">
 
     <head>
-        <title>Easy Move: Update About Us</title>
+        <title>Easy Move: Update Shuttle info</title>
 
         <link rel="stylesheet" href="../assets/vendor/themify-icons/themify-icons.css">
         <link rel="stylesheet" href="../assets/vendor/fontawesome/css/font-awesome.min.css">
@@ -49,7 +51,7 @@ if (strlen($_SESSION['vamsaid'] == 0)) {
 
             <div class="page">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="javascript:void(0);">Update About Us</a>
+                    <a class="navbar-brand" href="javascript:void(0);">Update Shuttle info</a>
 
                 </nav>
                 <div class="container-fluid">
@@ -57,29 +59,31 @@ if (strlen($_SESSION['vamsaid'] == 0)) {
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="header">
-                                    <h2>Update About Us</h2>
+                                    <h2>Update Shuttle info</h2>
                                 </div>
                                 <div class="body">
                                     <form id="" method="post" novalidate>
                                         <?php
-
-                                        $sql = "SELECT * from  tblpage where PageType='aboutus'";
+                                        $eid = $_GET['editid'];
+                                        $sql = "SELECT * from  shuttle where ID=$eid";
                                         $query = $dbh->prepare($sql);
                                         $query->execute();
                                         $results = $query->fetchAll(PDO::FETCH_OBJ);
-                                        $cnt = 1;
                                         if ($query->rowCount() > 0) {
                                             foreach ($results as $row) {               ?>
                                                 <div class="form-group">
-                                                    <label>Page Title:</label>
-                                                    <input type="text" name="pagetitle" value="<?php echo $row->PageTitle; ?>" class="form-control" required='true'>
+                                                    <label>Start Time:</label>
+                                                    <input type="text" name="S_Time" value="<?php echo $row->S_Time; ?>" class="form-control" required='true'>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Page Description:</label>
-                                                    <textarea type="text" name="pagedes" class="form-control" required='true'><?php echo $row->PageDescription; ?></textarea>
+                                                    <label>Arival Time:</label>
+                                                    <input type="text" name="A_Time" value="<?php echo $row->A_Time; ?>" class="form-control" required='true'>
                                                 </div>
-
-                                        <?php $cnt = $cnt + 1;
+                                                <div class="form-group">
+                                                    <label>Route:</label>
+                                                    <input type="text" name="Route" value="<?php echo $row->Route; ?>" class="form-control" required='true'>
+                                                </div>
+                                        <?php
                                             }
                                         } ?>
                                         <br>

@@ -112,40 +112,34 @@ include('includes/dbconnection.php');
                         <h2>Shuttle <span> Timing</span></h2>
                     </div>
                     <!-- section title end -->
-                    <table class="table">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Start Time</th>
-                                <th scope="col">Arival Time</th>
-                                <th scope="col">Route</th>
+                                <th>S.No</th>
+                                <th>Start Time</th>
+                                <th>Arival Time</th>
+                                <th>Route</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>01:40pm</td>
-                                <td>02:00pm</td>
-                                <td>UIU to Notun Bazar</td>
+                                <?php
+                                $sql = "SELECT * from  shuttle";
+                                $query = $dbh->prepare($sql);
+                                $query->execute();
+                                $results = $query->fetchAll(PDO::FETCH_OBJ);
+
+                                $cnt = 1;
+                                if ($query->rowCount() > 0) {
+                                    foreach ($results as $row) {               ?>
+                                        <td><?php echo htmlentities($cnt); ?></td>
+                                        <td><?php echo htmlentities($row->S_Time); ?></td>
+                                        <td><?php echo htmlentities($row->A_Time); ?></td>
+                                        <td><?php echo htmlentities($row->Route); ?></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>03:00pm</td>
-                                <td>03:20pm</td>
-                                <td>Notun Bazar to UIU</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>04:30pm</td>
-                                <td>04:50pm</td>
-                                <td>UIU to Notun Bazar</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>05:00pm</td>
-                                <td>05:20pm</td>
-                                <td>Notun Bazar to UIU</td>
-                            </tr>
+                    <?php $cnt = $cnt + 1;
+                                    }
+                                } ?>
                         </tbody>
                     </table>
 
