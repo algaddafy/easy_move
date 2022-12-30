@@ -30,14 +30,18 @@
 
                 </ul>
             </li>
-<!--             <li>
+            <li>
                 <a href="" class="has-arrow"><i class="ti-pencil-alt"></i><span>Page</span></a>
                 <ul>
+                    <li><a href="rickshawala-info.php">Add Rickshawala's Info</a></li>
+                    <li><a href="all_rickshawala.php">All Rickshawala's Info</a></li>
+                    <li><a href="shuttle-timing.php">Add Shuttle-timing</a></li>
+                    <li><a href="all_shuttle.php">All Shuttle-timing</a></li>
                     <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="contactus.php">Contact Us</a></li>
 
                 </ul>
-            </li> -->
+            </li>
             <li>
                 <a href="javascript:void(0)" class="has-arrow"><i class="ti-pencil-alt"></i><span>Request</span></a>
                 <ul>
